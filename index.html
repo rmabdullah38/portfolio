@@ -14,7 +14,7 @@
     <meta name="twitter:card" content="summary">
 
     <link rel="canonical" href="https://ronnyabdullah.com/">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -107,8 +107,23 @@
             <div class="wrap">
                 <h2 class="section-title">Projects</h2>
 
+                <div class="filters" role="group" aria-label="Filter projects by skill">
+                    <button class="filter" data-filter="systemverilog" aria-pressed="false">SystemVerilog</button>
+                    <button class="filter" data-filter="fpga" aria-pressed="false">FPGA</button>
+                    <button class="filter" data-filter="puf" aria-pressed="false">PUF</button>
+                    <button class="filter" data-filter="stm32" aria-pressed="false">STM32</button>
+                    <button class="filter" data-filter="embedded" aria-pressed="false">Embedded</button>
+                    <button class="filter" data-filter="pcb" aria-pressed="false">PCB</button>
+                    <button class="filter" data-filter="rf" aria-pressed="false">RF</button>
+                    <button class="filter" data-filter="smt-assembly" aria-pressed="false">SMT Assembly</button>
+                    <button class="filter" data-filter="python" aria-pressed="false">Python</button>
+                    <button class="filter" data-filter="raspberry-pi" aria-pressed="false">Raspberry Pi</button>
+                    <button class="filter" data-filter="optics" aria-pressed="false">Optics</button>
+                    <button class="filter" data-filter="biosensing" aria-pressed="false">Biosensing</button>
+                </div>
+
                 <div class="grid">
-                    <article class="card">
+                    <article class="card" data-tags="python raspberry-pi">
                         <h4>Capacitive Touch Sensor from Scratch</h4>
                         <p>A mutual-capacitance touchscreen on a bare copper-pad array: phase-offset PRBS drive across 5 lines, with correlator receivers on 7 sense channels via a 21.5-bit ENOB sigma-delta ADC. Baseline mapping, ellipse-fit touch centroid, and Kalman-filtered position and velocity tracking across 35 nodes.</p>
                         <ul class="tags">
@@ -121,7 +136,7 @@
                         <a class="card-link" href="docs/capacitive-touch-sensing.pdf">Read the report →</a>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="systemverilog">
                         <h4>SIMD Matrix-Multiply Accelerator</h4>
                         <p>A SIMD accelerator with PE datapath, controller FSM, and on-chip memory buffer, optimized to FoM &lt; 50 within 1 mm² and closed in Synopsys DC.</p>
                         <ul class="tags">
@@ -131,7 +146,7 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="rf smt-assembly pcb">
                         <h4>LoRa RF FeatherWing</h4>
                         <p>A 4-layer stackup (JLC04121H-3313) with 50 Ω controlled-impedance traces, a rebuilt TI reference PCB-antenna footprint and L-match network, ground pours with stitching vias, and Feather-compatible pin mapping. SMT-assembled and brought up to Meshtastic-format packet TX/RX at 917 MHz.</p>
                         <ul class="tags">
@@ -142,7 +157,7 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="systemverilog fpga">
                         <h4>5-Stage Pipelined MIPS Processor</h4>
                         <p>A 5-stage pipelined MIPS core supporting 40+ ops at single-cycle throughput, with RAW-hazard detection, data forwarding, and precise stall control.</p>
                         <ul class="tags">
@@ -151,7 +166,19 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="puf">
+                        <h4>SCRIPT: PUF Reliability &amp; Entropy Analysis</h4>
+                        <p>A statistical analysis of physically unclonable function (PUF) chip keys. A Beta-Binomial credible-interval filter drives the key bit-error rate from 14% to 1.3%, and a min-entropy accounting shows how inter-chip fabrication correlation erodes true key security.</p>
+                        <ul class="tags">
+                            <li>Hardware Security</li>
+                            <li>PUF</li>
+                            <li>Bayesian Inference</li>
+                            <li>Min-Entropy</li>
+                        </ul>
+                        <a class="card-link" href="docs/script-puf-reliability.pdf">Read the report →</a>
+                    </article>
+
+                    <article class="card" data-tags="stm32 embedded">
                         <h4>Gesture-Controlled RC Car with Live Camera Streaming</h4>
                         <p>Bare-metal STM32 firmware capturing 320×240 JPEG frames over DCMI+DMA from an OV2640, streamed via SPI to an ESP32 co-processor and served to a browser. I paired this with FSR gesture sensing over Bluetooth and UART-interrupt motor control.</p>
                         <ul class="tags">
@@ -163,7 +190,7 @@
                         <a class="card-link" href="docs/gesture-controlled-rc-car.pdf">Read the report →</a>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="optics">
                         <h4>Schlieren Imaging System</h4>
                         <p>A single-mirror Schlieren imaging system built from a concave mirror, point source, and a knife-edge at the focal plane. It turns refractive-index gradients in air into visible intensity contrast, resolving convection plumes rising off a heat source.</p>
                         <ul class="tags">
@@ -174,7 +201,7 @@
                         <a class="card-link" href="docs/schlieren-imaging.pdf">Read the report →</a>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="smt-assembly embedded">
                         <h4>Feather M4 Express Microcontroller</h4>
                         <p>A hand-assembled SAMD51 board (stencil, solder paste, and vapor-phase reflow), flashed over SWD and running CircuitPython. I built the microcontroller I program on.</p>
                         <ul class="tags">
@@ -184,7 +211,7 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="pcb">
                         <h4>BME688 Environmental Sensor Board</h4>
                         <p>A 4-layer environmental sensor board taken from schematic to Gerbers, with I²C bring-up, barometric altimetry, and a custom air-quality model.</p>
                         <ul class="tags">
@@ -194,7 +221,7 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="fpga">
                         <h4>Wave-Table Music Synthesizer</h4>
                         <p>An FSM-driven wave-table synthesizer generating sine-wave audio from ROM lookup tables, paired with a real-time VGA visualization datapath.</p>
                         <ul class="tags">
@@ -204,7 +231,7 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="pcb rf">
                         <h4>FM Stereo Radio Receiver</h4>
                         <p>Populated and brought up a multi-component FM receiver PCB with an RDA5807 front-end, LDO regulation, and RF passives.</p>
                         <ul class="tags">
@@ -214,7 +241,7 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="python raspberry-pi biosensing">
                         <h4>PPG / Pulse Transit Time Sensing</h4>
                         <p>A dual-PPG platform on a Raspberry Pi comparing wearable sensor placements for pulse-transit-time stability, with baseline removal, peak detection, and beat pairing across four body-location pairs.</p>
                         <ul class="tags">
@@ -226,7 +253,7 @@
                         <a class="card-link" href="docs/dual-ppg-ptt.pdf">Read the report →</a>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="biosensing">
                         <h4>Catheter-Based Electrochemical Sensing</h4>
                         <p>Electrochemical sensing on a catheter platform for embolization endpoint detection.</p>
                         <ul class="tags">
@@ -235,7 +262,7 @@
                         </ul>
                     </article>
 
-                    <article class="card">
+                    <article class="card" data-tags="embedded">
                         <h4>Motorized Couch</h4>
                         <p>A living-room couch that drives. Built with Stanford Moonshot Club, running embedded motor control through a throttle and steering linkage fabricated from scratch.</p>
                         <ul class="tags">
@@ -325,5 +352,32 @@
             <p>&copy; 2026 Ronny Abdullah</p>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
+            var cards = Array.prototype.slice.call(document.querySelectorAll('#projects .card'));
+            function apply() {
+                var active = filters
+                    .filter(function (b) { return b.classList.contains('active'); })
+                    .map(function (b) { return b.getAttribute('data-filter'); });
+                cards.forEach(function (card) {
+                    var tags = (card.getAttribute('data-tags') || '').split(' ');
+                    var show = active.length === 0 || active.some(function (f) {
+                        return tags.indexOf(f) !== -1;
+                    });
+                    card.style.display = show ? '' : 'none';
+                });
+            }
+            filters.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var on = !btn.classList.contains('active');
+                    btn.classList.toggle('active', on);
+                    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    apply();
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

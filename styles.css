@@ -260,6 +260,42 @@ section.alt {
 .bullets li::marker { color: var(--accent); }
 
 /* ---- Projects ---- */
+.filters {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.375rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar { display: none; }
+
+/* Match .tags li exactly, plus button resets */
+.filter {
+    flex: 0 0 auto;
+    padding: 0.1875rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: none;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 0.75rem;
+    line-height: inherit;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.filter:hover { border-color: var(--text-muted); }
+
+.filter.active {
+    background: var(--border);
+    border-color: var(--text-muted);
+    color: var(--text);
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
