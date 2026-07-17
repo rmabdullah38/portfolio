@@ -82,9 +82,9 @@
                     </div>
                     <p class="entry-meta">Stanford University</p>
                     <ul class="bullets">
-                        <li>Led 3 weekly lab sections per quarter of 20–25 students on digital logic, circuit analysis, PCB bring-up, and firmware.</li>
-                        <li>Ran 150+ debugging sessions per quarter on board bring-up failures and firmware bugs across interrupts, timers, and peripherals.</li>
-                        <li>Cut recurring lab failure rates by 35% by rewriting starter code and validation tests.</li>
+                        <li>Led 2 weekly lab sections per quarter of 20–25 students on digital logic, circuit analysis, PCB bring-up, and firmware.</li>
+                        <li>Ran 15 debugging sessions per quarter on board bring-up failures and firmware bugs across interrupts, timers, and peripherals.</li>
+                        <li>Rewrote starter code and validation tests to eliminate the most common board bring-up failures.</li>
                     </ul>
                 </article>
 
@@ -95,7 +95,8 @@
                     </div>
                     <p class="entry-meta">Software Engineering Intern, Backend Systems · Los Angeles, CA</p>
                     <ul class="bullets">
-                        <li>Built 5+ backend services and 12+ REST endpoints for study ingestion and workflow state management.</li>
+                        <li>Built 5+ backend services supporting radiology study ingestion pipelines.</li>
+                        <li>Implemented 12+ REST endpoints covering study ingestion and workflow state management.</li>
                     </ul>
                 </article>
             </div>
@@ -105,9 +106,23 @@
         <section id="projects" class="alt">
             <div class="wrap">
                 <h2 class="section-title">Projects</h2>
+
                 <div class="grid">
                     <article class="card">
-                        <h3>SIMD Matrix-Multiply Accelerator</h3>
+                        <h4>Capacitive Touch Sensor from Scratch</h4>
+                        <p>A mutual-capacitance touchscreen on a bare copper-pad array: phase-offset PRBS drive across 5 lines, with correlator receivers on 7 sense channels via a 21.5-bit ENOB sigma-delta ADC. Baseline mapping, ellipse-fit touch centroid, and Kalman-filtered position and velocity tracking across 35 nodes.</p>
+                        <ul class="tags">
+                            <li>Python</li>
+                            <li>Raspberry Pi</li>
+                            <li>PRBS/Correlation</li>
+                            <li>Kalman Filter</li>
+                            <li>Sigma-Delta ADC</li>
+                        </ul>
+                        <a class="card-link" href="docs/capacitive-touch-sensing.pdf">Read the report →</a>
+                    </article>
+
+                    <article class="card">
+                        <h4>SIMD Matrix-Multiply Accelerator</h4>
                         <p>A SIMD accelerator with PE datapath, controller FSM, and on-chip memory buffer, optimized to FoM &lt; 50 within 1 mm² and closed in Synopsys DC.</p>
                         <ul class="tags">
                             <li>SystemVerilog</li>
@@ -117,18 +132,71 @@
                     </article>
 
                     <article class="card">
-                        <h3>5-Stage Pipelined MIPS Processor</h3>
-                        <p>A 5-stage pipelined MIPS core supporting 40+ ops at single-cycle throughput, with RAW-hazard detection, data forwarding, and precise stall control.</p>
+                        <h4>LoRa RF FeatherWing</h4>
+                        <p>A 4-layer stackup (JLC04121H-3313) with 50 Ω controlled-impedance traces, a rebuilt TI reference PCB-antenna footprint and L-match network, ground pours with stitching vias, and Feather-compatible pin mapping. SMT-assembled and brought up to Meshtastic-format packet TX/RX at 917 MHz.</p>
                         <ul class="tags">
-                            <li>SystemVerilog</li>
-                            <li>Xilinx Zynq</li>
-                            <li>FPGA</li>
+                            <li>KiCad</li>
+                            <li>RF Layout</li>
+                            <li>LoRa</li>
+                            <li>SMT Assembly</li>
                         </ul>
                     </article>
 
                     <article class="card">
-                        <h3>Wave-Table Music Synthesizer</h3>
-                        <p>An FSM-driven wave-table synthesizer generating sine-wave audio from ROM lookup tables, paired with a double-buffered VGA visualization datapath.</p>
+                        <h4>5-Stage Pipelined MIPS Processor</h4>
+                        <p>A 5-stage pipelined MIPS core supporting 40+ ops at single-cycle throughput, with RAW-hazard detection, data forwarding, and precise stall control.</p>
+                        <ul class="tags">
+                            <li>SystemVerilog</li>
+                            <li>Xilinx Zynq</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h4>Gesture-Controlled RC Car with Live Camera Streaming</h4>
+                        <p>Bare-metal STM32 firmware capturing 320×240 JPEG frames over DCMI+DMA from an OV2640, streamed via SPI to an ESP32 co-processor and served to a browser. I paired this with FSR gesture sensing over Bluetooth and UART-interrupt motor control.</p>
+                        <ul class="tags">
+                            <li>C</li>
+                            <li>STM32</li>
+                            <li>DCMI/DMA</li>
+                            <li>ARM Cortex-M</li>
+                        </ul>
+                        <a class="card-link" href="docs/gesture-controlled-rc-car.pdf">Read the report →</a>
+                    </article>
+
+                    <article class="card">
+                        <h4>Schlieren Imaging System</h4>
+                        <p>A single-mirror Schlieren imaging system built from a concave mirror, point source, and a knife-edge at the focal plane. It turns refractive-index gradients in air into visible intensity contrast, resolving convection plumes rising off a heat source.</p>
+                        <ul class="tags">
+                            <li>Optics</li>
+                            <li>Fourier Optics</li>
+                            <li>Optical Alignment</li>
+                        </ul>
+                        <a class="card-link" href="docs/schlieren-imaging.pdf">Read the report →</a>
+                    </article>
+
+                    <article class="card">
+                        <h4>Feather M4 Express Microcontroller</h4>
+                        <p>A hand-assembled SAMD51 board (stencil, solder paste, and vapor-phase reflow), flashed over SWD and running CircuitPython. I built the microcontroller I program on.</p>
+                        <ul class="tags">
+                            <li>SAMD51</li>
+                            <li>SMT Assembly</li>
+                            <li>CircuitPython</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h4>BME688 Environmental Sensor Board</h4>
+                        <p>A 4-layer environmental sensor board taken from schematic to Gerbers, with I²C bring-up, barometric altimetry, and a custom air-quality model.</p>
+                        <ul class="tags">
+                            <li>PCB Design</li>
+                            <li>I²C</li>
+                            <li>BME688</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h4>Wave-Table Music Synthesizer</h4>
+                        <p>An FSM-driven wave-table synthesizer generating sine-wave audio from ROM lookup tables, paired with a real-time VGA visualization datapath.</p>
                         <ul class="tags">
                             <li>Verilog</li>
                             <li>FPGA</li>
@@ -137,17 +205,7 @@
                     </article>
 
                     <article class="card">
-                        <h3>Bare-Metal Autonomous RC Car</h3>
-                        <p>Bare-metal C firmware configuring UART, PWM timers, and SPI/I²C for a Bluetooth-controlled car with live camera streaming.</p>
-                        <ul class="tags">
-                            <li>C</li>
-                            <li>STM32</li>
-                            <li>ARM Cortex-M</li>
-                        </ul>
-                    </article>
-
-                    <article class="card">
-                        <h3>FM Stereo Radio Receiver</h3>
+                        <h4>FM Stereo Radio Receiver</h4>
                         <p>Populated and brought up a multi-component FM receiver PCB with an RDA5807 front-end, LDO regulation, and RF passives.</p>
                         <ul class="tags">
                             <li>Board Bring-Up</li>
@@ -157,8 +215,29 @@
                     </article>
 
                     <article class="card">
-                        <h3>Motorized Couch</h3>
-                        <p>A drivable couch built with Stanford Moonshot Club, running embedded motor control and a custom throttle and steering linkage.</p>
+                        <h4>PPG / Pulse Transit Time Sensing</h4>
+                        <p>A dual-PPG platform on a Raspberry Pi comparing wearable sensor placements for pulse-transit-time stability, with baseline removal, peak detection, and beat pairing across four body-location pairs.</p>
+                        <ul class="tags">
+                            <li>Python</li>
+                            <li>Raspberry Pi</li>
+                            <li>PPG</li>
+                            <li>Signal Processing</li>
+                        </ul>
+                        <a class="card-link" href="docs/dual-ppg-ptt.pdf">Read the report →</a>
+                    </article>
+
+                    <article class="card">
+                        <h4>Catheter-Based Electrochemical Sensing</h4>
+                        <p>Electrochemical sensing on a catheter platform for embolization endpoint detection.</p>
+                        <ul class="tags">
+                            <li>Electrochemical Sensing</li>
+                            <li>Biosensing</li>
+                        </ul>
+                    </article>
+
+                    <article class="card">
+                        <h4>Motorized Couch</h4>
+                        <p>A living-room couch that drives. Built with Stanford Moonshot Club, running embedded motor control through a throttle and steering linkage fabricated from scratch.</p>
                         <ul class="tags">
                             <li>Embedded C</li>
                             <li>Motor Control</li>
